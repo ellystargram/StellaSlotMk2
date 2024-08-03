@@ -9,8 +9,8 @@ class ScoreReader {
     val answers:HashMap<Pattern, String> = HashMap()
 
     init {
-        val jsonArray = JSONParser().parse(File(javaClass.getResource("score.json")!!.path).readText()) as JSONArray
-
+//        val jsonArray = JSONParser().parse(File(javaClass.getResourceAsStream("score.json")!!.toString()).readText()) as JSONArray
+        val jsonArray = JSONParser().parse(javaClass.getResource("score.json")!!.readText()) as JSONArray
         for (jsonObject in jsonArray) {
             jsonObject as JSONObject
             val score = jsonObject["score"]

@@ -21,22 +21,7 @@ class Slot:JPanel() {
         preferredSize = Dimension(320,620)
         background= Color.black
 
-        val imageDirAddress:String = "src/resources/degari/"
-        val imageDir:File = File(imageDirAddress)
-        if (!imageDir.exists()){
-            throw Exception("Image directory not found")
-        }
-        if (!imageDir.isDirectory){
-            throw Exception("Image directory is not a directory")
-        }
-        val files = imageDir.listFiles()
-        if (files == null){
-            throw Exception("No files found in image directory")
-        }
-        if (files.size <4){
-            throw Exception("Not enough images in image directory")
-        }
-
+//        println(javaClass.getResource("/resources/degari/")!!.toString())
         slotImages["buki"] = ImageIcon(javaClass.getResource("/resources/degari/buki.png"))
         slotImages["nana"] = ImageIcon(javaClass.getResource("/resources/degari/nana.png"))
         slotImages["riko"] = ImageIcon(javaClass.getResource("/resources/degari/riko.png"))
