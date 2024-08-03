@@ -37,16 +37,16 @@ class Slot:JPanel() {
             throw Exception("Not enough images in image directory")
         }
 
-        slotImages["buki"] = ImageIcon(imageDirAddress + "buki.png")
-        slotImages["nana"] = ImageIcon(imageDirAddress + "nana.png")
-        slotImages["riko"] = ImageIcon(imageDirAddress + "riko.png")
-        slotImages["lin"] = ImageIcon(imageDirAddress + "lin.png")
-        slotImages["tabi"] = ImageIcon(imageDirAddress + "tabi.png")
-        slotImages["rize"] = ImageIcon(imageDirAddress + "rize.png")
-        slotImages["hina"] = ImageIcon(imageDirAddress + "hina.png")
-        slotImages["mashiro"] = ImageIcon(imageDirAddress + "mashiro.png")
-        slotImages["kanna"] = ImageIcon(imageDirAddress + "kanna.png")
-        slotImages["yuni"] = ImageIcon(imageDirAddress + "yuni.png")
+        slotImages["buki"] = ImageIcon(javaClass.getResource("/resources/degari/buki.png"))
+        slotImages["nana"] = ImageIcon(javaClass.getResource("/resources/degari/nana.png"))
+        slotImages["riko"] = ImageIcon(javaClass.getResource("/resources/degari/riko.png"))
+        slotImages["lin"] = ImageIcon(javaClass.getResource("/resources/degari/lin.png"))
+        slotImages["tabi"] = ImageIcon(javaClass.getResource("/resources/degari/tabi.png"))
+        slotImages["rize"] = ImageIcon(javaClass.getResource("/resources/degari/rize.png"))
+        slotImages["hina"] = ImageIcon(javaClass.getResource("/resources/degari/hina.png"))
+        slotImages["mashiro"] = ImageIcon(javaClass.getResource("/resources/degari/mashiro.png"))
+        slotImages["kanna"] = ImageIcon(javaClass.getResource("/resources/degari/kanna.png"))
+        slotImages["yuni"] = ImageIcon(javaClass.getResource("/resources/degari/yuni.png"))
 
         for (slotImage in slotImages){
             slotImage.value.image = slotImage.value.image.getScaledInstance(300, 300, 1)
