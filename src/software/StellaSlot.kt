@@ -1,8 +1,9 @@
 package software
 
 import software.cheat.Cheater
-import software.score.Pattern
+import software.score.Pack
 import software.score.ScoreReader
+import software.score.SlotPattern
 import software.slot.Slot
 import software.topbar.TopBar
 import java.awt.BorderLayout
@@ -44,6 +45,11 @@ class StellaSlot : JFrame() {
                     keyInputted.clear()
                 }
             }
+            override fun keyReleased(e: KeyEvent) {
+                super.keyReleased(e)
+                keyInputted[e.keyCode] = false
+                keyInputted.remove(e.keyCode)
+            }
         })
         rollButton.requestFocus()
 
@@ -78,7 +84,8 @@ class StellaSlot : JFrame() {
                         slot.stopRoll()
                         Thread.sleep(100)
                     }
-                    scoreDisplayLabel.text = scoreReader.getScore(Pattern(slots[0].imageName, slots[1].imageName, slots[2].imageName))
+                    scoreDisplayLabel.text = scoreReader.getScore(SlotPattern(slots[0].imageName, slots[1].imageName, slots[2].imageName))
+//                    scoreDisplayLabel.text = scoreReader.getScore(Pack(slots[0].imageName, slots[1].imageName, slots[2].imageName))
                 }
                 stopThread.start()
             }
